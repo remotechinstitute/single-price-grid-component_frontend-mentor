@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --cyan-light: hsl(179, 62%, 48%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    /* Neutral */
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+
+    --karla-font: "Karla", sans-serif;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--karla-font);
+}
+
+.main {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    width: min(600px, 95%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    overflow: hidden;
+
+    
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
+
+    .sec {
+        padding: 2.5em;
+    }
+
+    .first-sec {
+        background-color: white;
+        grid-column: -1/1;
+
+        h1 {
+            color: var(--cyan);
+            font-size: 24px;
+            margin-bottom: .75em;
+        }
+
+        h2 {
+            color: var(--bright-yellow);
+            font-size: 16px;
+            margin-bottom: .5em;
+        }
+
+        p {
+            color: var(--grayish-blue);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+    }
+
+    .second-sec,
+    .third-sec {
+        color: var(--light-gray);
+
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+    }
+
+    .second-sec {
+        background-color: var(--cyan);
+        display: flex;
+        flex-direction: column;
+        gap: 1.3em;
+
+        .price-sec {
+            p {
+                font-size: 14px;
+            }
+
+            p:nth-child(1) {
+                display: flex;
+                align-items: center;
+                gap: 0.75em;
+                font-weight: 300;
+
+                span {
+                    font-size: 26px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .button button {
+            width: 100%;
+            padding: 0.75em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            color: white;
+            background: var(--bright-yellow);
+            font-family: var(--karla-font);
+        }
+    }
+
+    .third-sec {
+        background-color: var(--cyan-light);
+
+        h2 {
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}
